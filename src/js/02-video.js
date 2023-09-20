@@ -18,7 +18,7 @@ player.on('timeupdate', throttle(function(data){
     localStorage.setItem(key, JSON.stringify(currentTime));
 }, 1000));
 const time=localStorage.getItem(key);
-if(time='true'){
+if(time){
     player.setCurrentTime(parseFloat(time)).then(function(error){
 switch(error.name){
     case "RangeError":
