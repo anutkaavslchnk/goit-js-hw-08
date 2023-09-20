@@ -1,13 +1,15 @@
 import throttle from 'lodash.throttle';
 
 const form = document.querySelector(".feedback-form");
-const key = "feedback-form-state";
+
+ const key = "feedback-form-state";
 
 function fild() {
     const save = localStorage.getItem(key);
     if (save) {
         const parse = JSON.parse(save);
         form.elements.email.value = parse.email;
+
         form.elements.message.value = parse.message;
     }
 }
